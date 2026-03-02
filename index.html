@@ -3,231 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>qlabs &mdash; App Studio</title>
-  <meta name="description" content="qlabs is an independent app studio crafting polished, thoughtful software experiences.">
-  <meta name="theme-color" content="#06060e">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="qlabs — App Studio">
-  <meta property="og:description" content="Crafting polished, thoughtful software experiences.">
+  <title>qlabs</title>
+  <meta name="description" content="qlabs — app studio">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="qlabs">
+  <meta property="og:description" content="App studio.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://qlabs.studio">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Favicon (inline SVG) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔮</text></svg>">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>q</text></svg>">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- ===== Navigation ===== -->
-  <nav class="nav" id="nav">
-    <a href="#" class="nav-brand">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="logo-grad-1" x1="20" y1="30" x2="180" y2="170" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#7dd3fc"/>
-            <stop offset="0.5" stop-color="#3b82f6"/>
-            <stop offset="1" stop-color="#6366f1"/>
-          </linearGradient>
-          <linearGradient id="logo-grad-2" x1="170" y1="40" x2="30" y2="160" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#60a5fa"/>
-            <stop offset="1" stop-color="#818cf8"/>
-          </linearGradient>
-        </defs>
-        <path d="M100 30 C140 30, 170 60, 170 100 C170 140, 140 170, 100 170 C60 170, 30 140, 30 100 C30 60, 60 30, 100 30Z" stroke="url(#logo-grad-1)" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.9"/>
-        <path d="M80 70 C50 90, 50 130, 100 140 C150 150, 160 100, 130 80 C100 60, 70 80, 80 110 C90 140, 130 140, 140 110" stroke="url(#logo-grad-2)" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.7"/>
-      </svg>
-      qlabs
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-    </ul>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- ===== Hero ===== -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="hero-logo">
-        <!-- Logo SVG: Blue glass torus knot -->
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="knot-a" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#7dd3fc"/>
-              <stop offset="0.4" stop-color="#3b82f6"/>
-              <stop offset="1" stop-color="#4f46e5"/>
-            </linearGradient>
-            <linearGradient id="knot-b" x1="180" y1="20" x2="20" y2="180" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#93c5fd"/>
-              <stop offset="0.5" stop-color="#6366f1"/>
-              <stop offset="1" stop-color="#4338ca"/>
-            </linearGradient>
-            <linearGradient id="knot-c" x1="100" y1="10" x2="100" y2="190" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#a5b4fc"/>
-              <stop offset="1" stop-color="#3b82f6"/>
-            </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="4" result="blur"/>
-              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-            </filter>
-          </defs>
-          <!-- Outer ring -->
-          <ellipse cx="100" cy="100" rx="75" ry="75" stroke="url(#knot-a)" stroke-width="16" fill="none" opacity="0.35" filter="url(#glow)"/>
-          <!-- Trefoil knot approximation -->
-          <path d="M100 28 C145 28, 172 62, 168 100 C164 138, 135 168, 100 172 C65 176, 32 148, 28 112 C24 76, 50 40, 82 32" stroke="url(#knot-b)" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.8"/>
-          <path d="M82 32 C110 24, 152 44, 160 78 C168 112, 148 152, 118 164 C88 176, 48 156, 36 126 C24 96, 38 56, 68 40" stroke="url(#knot-c)" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.6"/>
-          <!-- Center highlight -->
-          <circle cx="90" cy="80" r="12" fill="url(#knot-a)" opacity="0.12"/>
-        </svg>
-      </div>
-      <h1><span class="gradient-text">qlabs</span></h1>
-      <p>An independent studio crafting polished, thoughtful software. We build apps that feel right.</p>
-      <div class="hero-buttons">
-        <a href="#work" class="btn btn-primary">See Our Work</a>
-        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== About ===== -->
-  <section class="about" id="about">
-    <div class="section-container">
-      <div class="reveal">
-        <p class="section-label">About</p>
-        <h2 class="section-title">Software with intention</h2>
-        <p class="section-desc">We care about the details that make great software feel great.</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p>qlabs is a small, focused studio that builds apps people love to use. We believe in quality over quantity &mdash; every project gets our full attention from concept to launch.</p>
-          <p>We work across platforms, blending clean design with solid engineering to ship products that are fast, reliable, and a pleasure to interact with.</p>
-        </div>
-        <div class="about-stats reveal">
-          <div class="stat-card">
-            <div class="stat-number">Product</div>
-            <div class="stat-label">Design & Strategy</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">Mobile</div>
-            <div class="stat-label">iOS & Android</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">Web</div>
-            <div class="stat-label">Apps & Platforms</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">AI</div>
-            <div class="stat-label">Intelligent Features</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Work ===== -->
-  <section class="work" id="work">
-    <div class="section-container">
-      <div class="reveal">
-        <p class="section-label">Work</p>
-        <h2 class="section-title">What we're building</h2>
-        <p class="section-desc">A selection of projects from our studio.</p>
-      </div>
-      <div class="work-grid">
-        <div class="work-card reveal">
-          <div class="work-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <h3>Web Platforms</h3>
-          <p>Full-stack web applications built with modern frameworks, designed for performance and scalability.</p>
-          <span class="work-tag">Web</span>
-        </div>
-        <div class="work-card reveal">
-          <div class="work-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-          </div>
-          <h3>Mobile Apps</h3>
-          <p>Native and cross-platform mobile experiences that feel fluid and intuitive on every device.</p>
-          <span class="work-tag">Mobile</span>
-        </div>
-        <div class="work-card reveal">
-          <div class="work-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>AI Integrations</h3>
-          <p>Intelligent features powered by the latest models, seamlessly woven into the user experience.</p>
-          <span class="work-tag">AI</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Contact ===== -->
-  <section class="contact" id="contact">
-    <div class="section-container reveal">
-      <p class="section-label">Contact</p>
-      <h2 class="section-title">Let's build something</h2>
-      <p class="section-desc">Have a project in mind? We'd love to hear about it.</p>
-      <div class="contact-cta">
-        <a href="mailto:hello@qlabs.studio" class="btn btn-primary">Say Hello</a>
-        <br>
-        <a href="mailto:hello@qlabs.studio" class="contact-email">hello@qlabs.studio</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Footer ===== -->
-  <footer class="footer">
-    <div class="footer-left">&copy; 2026 qlabs. All rights reserved.</div>
-    <ul class="footer-links">
-      <li><a href="https://github.com/eddy-qiu" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="https://x.com" target="_blank" rel="noopener">X</a></li>
-    </ul>
-  </footer>
-
-  <!-- ===== Scripts ===== -->
-  <script>
-    // Navbar scroll effect
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-
-    // Mobile menu toggle
-    const toggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        navLinks.classList.remove('open');
-      });
-    });
-
-    // Scroll reveal
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(el => observer.observe(el));
-  </script>
+  <main>
+    <h1>qlabs</h1>
+    <a href="mailto:support@qlabs.studio">support@qlabs.studio</a>
+  </main>
+  <footer>qlabs LLC</footer>
 </body>
 </html>
