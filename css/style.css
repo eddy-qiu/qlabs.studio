@@ -51,14 +51,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid #333;
-  border-radius: 8px;
+  border: none;
+  border-radius: 0;
   color: #fff;
-  transition: border-color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .mark:hover {
-  border-color: #666;
+  opacity: 0.7;
 }
 
 .contact-link {
@@ -82,7 +82,7 @@ header {
 }
 
 .contact-link:hover {
-  color: #e8e8e8;
+  color: #fff;
 }
 
 .contact-link:hover::after {
@@ -108,27 +108,6 @@ h1 {
   letter-spacing: -0.05em;
   line-height: 1;
   margin-bottom: 0.6rem;
-}
-
-.capabilities {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-}
-
-.capabilities span {
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  color: #fff;
-  padding: 0.4rem 0.9rem;
-  border: 1px solid #1a1a1a;
-  border-radius: 100px;
-  transition: all 0.3s ease;
-}
-
-.capabilities span:hover {
-  color: #fff;
-  border-color: #333;
 }
 
 .about {
@@ -161,7 +140,7 @@ h1 {
 }
 
 .email:hover {
-  color: #e8e8e8;
+  color: #fff;
 }
 
 .email:hover::after {
@@ -214,12 +193,4 @@ footer {
     padding: 1.5rem;
   }
 
-  .capabilities {
-    gap: 0.6rem;
-  }
-
-  .capabilities span {
-    font-size: 0.65rem;
-    padding: 0.35rem 0.7rem;
-  }
 }
