@@ -10,44 +10,216 @@ html, body {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #000;
-  color: #fff;
+  font-family: 'Space Mono', monospace;
+  background: #0a0a0a;
+  color: #e8e8e8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
+/* noise texture overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ---- header ---- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.mark {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #333;
+  border-radius: 8px;
+  color: #e8e8e8;
+  transition: border-color 0.3s ease;
+}
+
+.mark:hover {
+  border-color: #666;
+}
+
+.contact-link {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #666;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.contact-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #e8e8e8;
+  transition: width 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #e8e8e8;
+}
+
+.contact-link:hover::after {
+  width: 100%;
+}
+
+/* ---- main ---- */
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 0;
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 300;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 0.15em;
 }
 
-a {
-  color: #888;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.2s;
+.tagline {
+  font-size: 1rem;
+  color: #555;
+  letter-spacing: 0.02em;
+  margin-bottom: 2.5rem;
 }
 
-a:hover {
-  color: #fff;
+.capabilities {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
 }
 
-footer {
-  padding: 1.5rem;
-  text-align: center;
+.capabilities span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   color: #444;
-  font-size: 0.8rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #1a1a1a;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.capabilities span:hover {
+  color: #888;
+  border-color: #333;
+}
+
+.email {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: #666;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.email::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #e8e8e8;
+  transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.email:hover {
+  color: #e8e8e8;
+}
+
+.email:hover::after {
+  width: 100%;
+}
+
+/* ---- footer ---- */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.legal {
+  font-size: 0.75rem;
+  color: #333;
+  letter-spacing: 0.05em;
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socials a {
+  font-size: 0.75rem;
+  color: #333;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #888;
+}
+
+/* ---- reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- mobile ---- */
+@media (max-width: 640px) {
+  header, footer {
+    padding: 1.5rem;
+  }
+
+  .capabilities {
+    gap: 0.6rem;
+  }
+
+  .capabilities span {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.7rem;
+  }
 }
