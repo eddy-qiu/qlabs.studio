@@ -43,7 +43,7 @@ header {
 }
 
 .mark {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Space Mono', monospace;
   font-size: 1.1rem;
   font-weight: 600;
   width: 36px;
@@ -103,9 +103,9 @@ main {
 }
 
 h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(4rem, 12vw, 8rem);
-  font-weight: 300;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 700;
   letter-spacing: -0.05em;
   line-height: 1;
   margin-bottom: 0.15em;
@@ -138,6 +138,15 @@ h1 {
 .capabilities span:hover {
   color: #888;
   border-color: #333;
+}
+
+.about {
+  max-width: 420px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 2rem;
 }
 
 .email {
